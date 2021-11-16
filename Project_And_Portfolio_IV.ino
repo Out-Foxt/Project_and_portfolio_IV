@@ -14,6 +14,7 @@ void setup() {
 pinMode(ePin, INPUT); 
 pinMode(tPin, OUTPUT); 
 Serial.begin(9600);
+pinMode(11,OUTPUT);
 
 }//end setup
 
@@ -45,6 +46,13 @@ Serial.println(distance);
 //add functionality for user to set diferent distance and not have it hard coded
 
 //add in alarm here 
+
+if(distance<100){
+  digitalWrite(11,HIGH);
+}
+else{
+  digitalWrite(11,LOW);
+}
 
 
 }//end main loop 
